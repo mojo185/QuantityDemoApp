@@ -1,0 +1,298 @@
+{
+  "QuantitySystemInfo": {
+    "Version": {
+      "MajorVersion": 1,
+      "MinorVersion": 0,
+    },
+  },
+  "Constants": [
+    {
+      "Key": "StandardGravity",
+      "Value": 9.80665
+    },
+    {
+      "Key": "AbsoluteZeroCelsius",
+      "Value": -273.15
+    }
+  ],
+
+  "StandardReferenceConditions": [
+    {
+      "Key": "StandardTemperature",
+      "DefaultName": "Standard Temperature",
+      "Value": 15.0
+    },
+    {
+      "Key": "StandardPressure",
+      "DefaultName": "Standard Atmospheric Pressure",
+      "Value": 101325.0
+    }
+  ],
+  "Quantities": [
+    {
+      "Key": "Length",
+      "DefaultName": "Length",
+      "SiUnit": "m",
+      "Units": [
+        {
+          "Unit": "mm",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1000.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "cm",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 100.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "m",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "km",
+          "SimpleCalc": {
+            "Multiplier": 1000.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        }
+      ]
+    },
+
+    {
+      "Key": "Mass",
+      "DefaultName": "Mass",
+      "SiUnit": "kg",
+      "Units": [
+        {
+          "Unit": "g",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1000.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "kg",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "t",
+          "SimpleCalc": {
+            "Multiplier": 1000.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        }
+      ]
+    },
+
+    {
+      "Key": "Temperature",
+      "DefaultName": "Temperature",
+      "SiUnit": "K",
+      "Units": [
+        {
+          "Unit": "K",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "°C",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 273.15
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        }
+      ]
+    },
+
+    {
+      "Key": "Distance",
+      "DefaultName": "Distance",
+      "SiUnit": "m",
+      "Units": [
+        {
+          "Unit": "m",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "km",
+          "SimpleCalc": {
+            "Multiplier": 1000.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        }
+      ]
+    },
+    {
+      "Key": "FuelConsumption",
+      "DefaultName": "Fuel Consumption",
+      "SiUnit": "L/100km",
+      "Units": [
+        {
+          "Unit": "L/100km",
+          "SimpleCalc": {
+            "Multiplier": 1.0,
+            "Divisor": 1.0,
+            "Offset": 0.0
+          },
+          "ConversionCalculation": null,
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "km/L",
+          "SimpleCalc": null,
+          "ConversionCalculation": {
+            "CalculationToSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 100.0,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            },
+            "CalculationFromSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 100.0,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            }
+          },
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "US mpg",
+          "SimpleCalc": null,
+          "ConversionCalculation": {
+            "CalculationToSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 235.214583,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            },
+            "CalculationFromSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 235.214583,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            }
+          },
+          "ReferenceConditions": []
+        },
+        {
+          "Unit": "Imperial mpg",
+          "SimpleCalc": null,
+          "ConversionCalculation": {
+            "CalculationToSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 282.481,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            },
+            "CalculationFromSi": {
+              "Division": {
+                "Dividend": {
+                  "Value": 282.481,
+                  "Constant": null,
+                  "KnownVariable": false
+                },
+                "Divisor": {
+                  "Value": 0.0,
+                  "Constant": null,
+                  "KnownVariable": true
+                }
+              }
+            }
+          },
+          "ReferenceConditions": []
+        }
+      ]
+    }
+  ],
+
+  "QuantityConversions": []
+}

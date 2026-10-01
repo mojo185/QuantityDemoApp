@@ -1,0 +1,203 @@
+﻿<Window x:Class="QuantityDemoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuantityDemoApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+
+        <TextBlock Grid.Row="0"
+                   Text="Quantity System Demo"
+                   FontSize="26"
+                   FontWeight="SemiBold"/>
+
+
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- ===================================== -->
+            <!-- UNIT CONVERSION -->
+            <!-- ===================================== -->
+
+            <GroupBox Grid.Column="0"
+                      Header="Unit Conversion"
+                      Padding="15">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0">Select a quantity:</Label>
+                        <ComboBox Grid.Column="1" x:Name="QuantityComboBox"
+                            SelectionChanged="QuantityComboBox_SelectionChanged"/>
+
+                    </Grid>
+
+                    <!-- FROM -->
+                    <Grid Grid.Row="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Text="From:"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,0"/>
+
+                        <TextBox x:Name="FromValueTextBox" Grid.Column="1"
+                                 Text="6,5"
+                                 Height="32"
+                                 VerticalContentAlignment="Center" TextChanged="FromValueTextBox_TextChanged"/>
+
+                        <ComboBox Grid.Column="2" x:Name="FromUnitComboBox" Margin="10 0 0 0" Width="auto"
+          SelectionChanged="FromUnitComboBox_SelectionChanged"/>
+
+                    </Grid>
+
+
+                    <!-- TO -->
+
+                    <Grid Grid.Row="4">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Text="To:"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,0"/>
+
+                        <TextBox x:Name="ToValueTextBox" Grid.Column="1"
+                                 IsReadOnly="True"
+                                 Height="32"
+                                 VerticalContentAlignment="Center"/>
+
+                        <ComboBox  Grid.Column="2" x:Name="ToUnitComboBox" Margin="10 0 0 0" Width="auto"/>
+
+                    </Grid>
+
+
+                    <!-- CONVERT -->
+
+                    <Button Grid.Row="6"
+                            Content="Convert"
+                            Height="35"
+                            HorizontalAlignment="Right"
+                            Padding="25,0" Click="Button_Click"/>
+                    <Label Grid.Row="7" x:Name="ErrorLabel" Foreground="Red"></Label>
+
+                </Grid>
+
+            </GroupBox>
+
+
+            <!-- ===================================== -->
+            <!-- REAL WORLD -->
+            <!-- ===================================== -->
+
+            <GroupBox Grid.Column="2"
+                      Header="Real-world example: Car"
+                      Padding="15">
+
+                <Grid Margin="15">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.5*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Distance -->
+                    <TextBlock Grid.Row="0"
+                   Text="Distance"
+                   FontWeight="SemiBold"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="CarDistanceTextBox" Grid.Column="0" Margin="0,0,10,0"/>
+
+                        <ComboBox x:Name="CarDistanceUnitComboBox" Grid.Column="1" SelectionChanged="CarDistanceUnitComboBox_SelectionChanged"/>
+                    </Grid>
+
+                    <!-- Fuel consumption -->
+                    <TextBlock Grid.Row="2"
+                   Text="Fuel consumption"
+                   FontWeight="SemiBold"/>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="CarConsumptionTextBox"
+                     Grid.Column="0"
+                     Margin="0,0,10,0"/>
+
+                        <ComboBox x:Name="CarConsumptionUnitComboBox"
+                      Grid.Column="1" SelectionChanged="CarConsumptionUnitComboBox_SelectionChanged"/>
+                    </Grid>
+
+                    <Button Grid.Row="5" x:Name="CalculateFuelButton" Content="Calculate" Click="CalculateFuelButton_Click"/>
+
+                    <TextBlock Grid.Row="7"
+                   x:Name="CarFuelResultTextBlock"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" />
+
+                </Grid>
+
+            </GroupBox>
+
+        </Grid>
+
+    </Grid>
+</Window>
